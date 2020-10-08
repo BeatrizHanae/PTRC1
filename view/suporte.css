@@ -1,0 +1,145 @@
+.Primeiro_Retangulo{
+    width: 100%;
+    position: absolute;
+    height: 83px;
+    left: -23px;
+    top: -10px; 
+    background: #1E3E59;
+}
+.Botoes_Primeiro_Retangulo{
+    font-family: Nova Square;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+#produto{
+    position: absolute;
+    left: 615px;
+    right: 325px;
+    top: 30px;
+    bottom: 1387px;
+}
+#suporte{
+    position: absolute;
+    left: 699px;
+    right: 252px;
+    top: 30px;
+    bottom: 1392px;
+}
+#contato{
+    position: absolute;
+    left: 772px;
+    right: 169px;
+    top: 30px;
+    bottom: 1387px;
+}
+#login{
+    position: absolute;
+    width: 48px;
+    height: 23px;
+    left: calc(50% - 48px/2 + 379px);
+    top: calc(50% - 23px/2 - 677.5px); 
+}
+#titulo_suporte{
+    position: absolute;
+    width: 147px;
+    height: 35px;
+    left: 449px;
+    top: 155px;
+
+    font-family: Nova Square;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 34px;
+    line-height: 41px;
+
+    color: #000000;
+}
+#titulo_duvidas{
+    position: absolute;
+    width: 360px;
+    height: 44px;
+    left: 385px;
+    top: 226px;
+
+    font-family: Nova Square;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 34px;
+
+    color: #000000;
+}
+.retangulos_duvidas_frequentes{
+    position: absolute;
+    width: 641px;
+    height: 36px;
+    left: 186px;
+    background: #B0C4DE;
+}
+.estilo_de_texto_botao{
+    font-family: Nova Square;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+.textos{
+    font-family: Nova Square;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #000000;
+}
+#posicao_texto_manutencao{
+    position: absolute;
+    width: 395px;
+    height: 58px;
+    left: 92px;
+    top: 626px;
+}
+#posicao_texto_assistencia{
+    position: absolute;
+    width: 289px;
+    height: 203px;
+    left: 655px;
+    top: 691px;
+}
+#posicao_texto_treinamento{
+    position: absolute;
+    width: 281px;
+    height: 53px;
+    left: 127px;
+    top: 892px;
+}
+#slogan{
+    position: absolute;
+    width: 672px;
+    height: 37px;
+    left: 186px;
+    top: 1143px;
+
+    font-family: Nova Square;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 36px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+}
+.retangulo_final_pagina{
+    position: absolute;
+    width: 100%;
+    height: 138px;
+    Top: 1290px;
+    background: #1E3E59;
+}
