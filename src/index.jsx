@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import Home from './pages/Home';
+import Routes from './routes';
 import GlobalCss from './styles/global';
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalCss />
-    <Home />
+    <BrowserRouter basename="/">
+      <Routes />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 );
