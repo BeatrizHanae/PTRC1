@@ -5,7 +5,8 @@ module.exports = {
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:prettier/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -20,12 +21,14 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "react-hooks"
+        "react-hooks",
+        "prettier"
     ],
     "rules": {
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react/jsx-filename-extension": [1, { "extensions": [".jsx"] }],
       "import/prefer-default-export": "off",
+      "prettier/prettier": "error"
     }
 };
