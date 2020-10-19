@@ -1,19 +1,21 @@
-import React from 'react'
-import { Container, DivAgrupa, DivFormCad, DivImgCad, DivImgLinhas, DivTitulo } from './styles'
-import IconCadastro from '../../assets/IconCadastro.png'
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React from 'react';
+import {
+  Container,
+  DivFormCad,
+  DivImgCad,
+  DivImgLinhas,
+  DivTitulo,
+} from './styles';
+import IconCadastro from '../../assets/IconCadastro.png';
 import linhasImage from '../../assets/linhas.png';
 
 const Cadastro = () => {
-
   return (
     <Container>
       <DivTitulo>
-        <h1>
-          Bem vindo!
-        </h1>
-        <h2>
-          Cadastro
-        </h2>
+        <h1>Bem vindo!</h1>
+        <h2>Cadastro</h2>
       </DivTitulo>
       <DivFormCad>
         <form>
@@ -32,11 +34,10 @@ const Cadastro = () => {
             <input type="text" />
           </label>
 
-          <label >
+          <label>
             Senha:
             <input type="password" />
           </label>
-
         </form>
       </DivFormCad>
 
@@ -46,13 +47,9 @@ const Cadastro = () => {
       <DivImgLinhas>
         <img src={linhasImage} alt="Icone do cadastro" />
       </DivImgLinhas>
-      <h2>
-        Oferecemos a maior linha de produtos para a sua empresa.
-      </h2>
-
+      <h2>Oferecemos a maior linha de produtos para a sua empresa.</h2>
     </Container>
+  );
+};
 
-  )
-}
-
-export default Cadastro
+export default Cadastro;
