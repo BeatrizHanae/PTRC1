@@ -5,6 +5,7 @@ import logoImagem from '../../assets/logoImagem.png';
 import logoMarca from '../../assets/logoMarca.png';
 import cartImage from '../../assets/cart.png';
 import { Container } from './styles';
+import { Link } from 'react-router-dom';
 
 const Menu = () => (
   <Container>
@@ -31,14 +32,19 @@ const Menu = () => (
           </a>
         </li>
         <li>
+          <Link to="/cadastro">
+            Cadastro
+          </Link>
+        </li>
+        <li>
           <a href="#">
             <img src={cartImage} alt="Cart" />
           </a>
         </li>
         <li>
-          <a href="#" className="login">
+          <Link to="/login" className="login">
             Login
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

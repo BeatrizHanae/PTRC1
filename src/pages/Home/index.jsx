@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { FiCpu, FiSettings } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
-import Menu from '../../components/Menu';
+
 import { QuemSomos, SectionOne, Produtos, Jornada } from './styles';
 import Button from '../../components/Button';
 import imgBermatec from '../../assets/bematech.png';
 import imgDaruma from '../../assets/daruma.png';
 import imgBelgin from '../../assets/elgin.png';
 import imgZebra from '../../assets/zebra.png';
-import Footer from '../../components/Footer';
+
 
 const Home = () => {
   const [products] = useState([
@@ -37,7 +37,6 @@ const Home = () => {
 
   return (
     <>
-      <Menu />
       <SectionOne>
         <div className="content">
           Oferecemos a maior linha de equipamentos para a sua empresa
@@ -74,7 +73,6 @@ const Home = () => {
           <img src={imgZebra} alt="" />
         </div>
       </Jornada>
-      <Footer />
     </>
   );
 };

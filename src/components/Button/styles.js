@@ -7,7 +7,7 @@ export const Container = styled.a`
   filter: drop-shadow(0px 5px 2px rgba(0,0,0,0.8));
   border-radius: 4px;
   color: #000;
-
+  text-align:center;
   &:visited{
     color: #000;
   }
