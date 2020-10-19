@@ -1,64 +1,64 @@
 import styled from 'styled-components';
 
-
 export const Container = styled.section`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  img{
-    align-self:center;
+  padding: 50px 0;
+  img {
+    align-self: center;
   }
-
-`
+`;
 export const DivTitulo = styled.div`
   width: 100%;
   flex-direction: column;
-  flex-wrap: wrap;
-  text-align:center;
+  text-align: center;
+`;
 
-`
-
-export const  DivFormCad = styled.div`
-form{
+export const DivFormCad = styled.div`
+  form {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    width:250%;
+    min-width: 40vw;
     input {
       height: 40px;
     }
-    label{
+    label {
       display: flex;
       flex-direction: column;
-
     }
   }
-
-`
+`;
 
 export const DivImgCad = styled.div`
-  display: flex;  
+  display: flex;
   flex-direction: column;
 
-  h1{
-    justify-content:center;
+  h1 {
+    justify-content: center;
     display: flex;
   }
 
-  h2{
-    justify-content:center;
+  h2 {
+    justify-content: center;
     text-decoration: underline;
     display: flex;
     padding: 20px;
   }
-
-`
+`;
 
 export const DivImgLinhas = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
-  background-size: cover;
-
-`
+  img {
+    width: 100vw;
+  }
+  position: relative;
+  top: -100px;
+  z-index: -1;
+  margin-bottom: -100px;
+`;
