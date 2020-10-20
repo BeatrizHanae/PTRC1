@@ -27,9 +27,9 @@ const Menu = () => (
           </a>
         </li>
         <li>
-          <a href="#">
+          <Link to="/Contato">
             Contato
-          </a>
+          </Link>
         </li>
         <li>
           <Link to="/cadastro">

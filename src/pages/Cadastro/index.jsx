@@ -4,11 +4,10 @@ import {
   Container,
   DivFormCad,
   DivImgCad,
-  DivImgLinhas,
   DivTitulo,
 } from './styles';
 import IconCadastro from '../../assets/IconCadastro.png';
-import linhasImage from '../../assets/linhas.png';
+
 
 const Cadastro = () => {
   return (
@@ -44,9 +43,7 @@ const Cadastro = () => {
       <DivImgCad>
         <img src={IconCadastro} alt="Icone do cadastro" />
       </DivImgCad>
-      <DivImgLinhas>
-        <img src={linhasImage} alt="Icone do cadastro" />
-      </DivImgLinhas>
+    
       <h2>Oferecemos a maior linha de produtos para a sua empresa.</h2>
     </Container>
   );

@@ -50,15 +50,3 @@ export const DivImgCad = styled.div`
   }
 `;
 
-export const DivImgLinhas = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  img {
-    width: 100vw;
-  }
-  position: relative;
-  top: -100px;
-  z-index: -1;
-  margin-bottom: -100px;
-`;
