@@ -15,22 +15,28 @@ const Home = () => {
     {
       titulo: 'Produtos',
       icon: FiCpu,
-      description:
-        'Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um',
+      description1:'-  Comercialização de equipamentos para automação comercial.',
+      description2:'- Consultoria para otimização da operação indicando o tipo de automação mais indicado. ',
+      description3:'',
+      description4:'',
       link: '#',
     },
     {
       titulo: 'Serviços',
       icon: FiSettings,
-      description:
-        'Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um',
+      description1:'- Treinamento na utilização dos hardwares, quando necessário. ',
+      description2:'- Atendimento On Site. ',
+      description3:'- Atendimento On Site. ', 
+      description4:'- Contrato de Manutenção de Hardware. ',     
       link: '#',
     },
     {
       titulo: 'Contato',
       icon: FaWhatsapp,
-      description:
-        'Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um',
+      description1:'-E-mail ',
+      description2:'-Redes sociais',
+      description3:'-Localização',
+      description4:'-Telefone ',
       link: '#',
     },
   ]);
@@ -47,11 +53,14 @@ const Home = () => {
       <QuemSomos>
         <h1> QUEM SOMOS NÓS</h1>
         <p>
-          Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit
-          1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm
-          und diese durcheinander warf um ustrie. Lorem Ipsum ist in der
-          Industrie bereits der Standard Demo-Text seit 1500, als ein
-          unbekannter Schriftsteller ei
+          Com tanta experiência profissional conseguimos entender perfeitamente as necessidades de sua empresa.
+          Com ferramentas ideais para gestão completa do seu negócio, integrando vendas,
+          estoque e financeiro.Soluções que trazem economia e agilidade para seu empreendimento.
+        </p>
+        <p>
+          A AUPRIS proporciona as melhores soluções do mercado que resultam numa empresa ágil,
+          com processos bem controlados, mantendo sempre as informações precisas e completas.
+          Entre em contato e descubra tudo que podemos fazer por você.
         </p>
       </QuemSomos>
       <Produtos>
@@ -59,7 +68,10 @@ const Home = () => {
           <div key={product.titulo}>
             <product.icon size={40} />
             <h2>{product.titulo}</h2>
-            <p>{product.description}</p>
+            <p>{product.description1}</p>
+             <p>{product.description2}</p>
+             <p>{product.description3}</p>
+             <p>{product.description4}</p>
             <Button>Saiba Mais</Button>
           </div>
         ))}

@@ -7,7 +7,7 @@ import {
   DivTitulo,
 } from './styles';
 import IconCadastro from '../../assets/IconCadastro.png';
-
+import Button from '../../components/Button'
 
 const Cadastro = () => {
   return (
@@ -37,13 +37,17 @@ const Cadastro = () => {
             Senha:
             <input type="password" />
           </label>
+          <Button>
+            Finalizar
+          </Button>
         </form>
+
       </DivFormCad>
 
       <DivImgCad>
         <img src={IconCadastro} alt="Icone do cadastro" />
       </DivImgCad>
-    
+
       <h2>Oferecemos a maior linha de produtos para a sua empresa.</h2>
     </Container>
   );
