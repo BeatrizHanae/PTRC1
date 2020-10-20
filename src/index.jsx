@@ -5,6 +5,7 @@ import Menu from './components/Menu';
 import Footer from './components/Footer';
 import Routes from './routes';
 import GlobalCss from './styles/global';
+import LinhasImg from './components/LinhasImg';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.render(
     <BrowserRouter basename="/">
       <Menu />
       <Routes />
+      <LinhasImg />
       <Footer />
     </BrowserRouter>
     
