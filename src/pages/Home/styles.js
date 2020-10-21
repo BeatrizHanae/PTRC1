@@ -65,7 +65,7 @@ export const QuemSomos = styled(Section)`
 export const Produtos = styled(Section)`
   gap: 20px;
   >div {
-    max-width: 30%;
+    width: 30%;
     background: rgba(30, 62, 89, 0.63);
     border-radius: 10px;
     padding: 20px;

@@ -22,9 +22,9 @@ const Menu = () => (
           </a>
         </li>
         <li>
-          <a href="#">
+          <Link to="/Suporte">
             Suporte
-          </a>
+          </Link>
         </li>
         <li>
           <Link to="/Contato">
