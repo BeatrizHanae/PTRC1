@@ -7,7 +7,7 @@ import {
   DivTitulo,
 } from './styles';
 import IconCadastro from '../../assets/IconCadastro.png';
-import Button from '../../components/Button'
+import Button from '../../components/Button';
 
 const Cadastro = () => {
   return (
@@ -41,7 +41,6 @@ const Cadastro = () => {
             Finalizar
           </Button>
         </form>
-
       </DivFormCad>
 
       <DivImgCad>

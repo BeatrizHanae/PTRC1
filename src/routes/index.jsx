@@ -5,6 +5,7 @@ import Login from '../pages/Login';
 import Cadastro from '../pages/Cadastro';
 import Contato from '../pages/Contato';
 import Suporte from '../pages/Suporte';
+import FuncionarioCadastro from '../pages/FuncionarioCadastro';
 import Route from './Route';
 
 
@@ -16,6 +17,7 @@ const Routes = () => {
       <Route exact path="/cadastro" component={Cadastro} />
       <Route exact path="/Contato" component={Contato} />
       <Route exact path="/Suporte" component={Suporte} />
+      <Route exact path="/FuncionarioCadastro" component={FuncionarioCadastro} />
     </Switch>
   );
 };

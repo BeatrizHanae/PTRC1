@@ -9,6 +9,7 @@ const Suporte = () => {
   return (
     <Container>
       <DivManutencao>
+        <img src={IconManutencao} alt ="Icone da manutenção"/>
         <h1>Manutenção</h1>
         <p>Para realizar a manutenção dos
         produtos baixe os nossos manuais:
@@ -19,7 +20,7 @@ const Suporte = () => {
         <p>
           -> Ou clique aqui!
         </p>
-
+        <img src={IconTreinamento} alt ="Icone de treinamento"/>
         <h1>Treinamento</h1>
         <p>
           -> Ou clique aqui!
@@ -27,14 +28,19 @@ const Suporte = () => {
       </DivManutencao>
 
       <DivAssistencia>
+      <img src={IconAssistenciaTecnica} alt ="Icone da Assistencia"/>
         <h1>Assistência técnica </h1>
         <p>
           Caso precise de assistência técnica,
+        </p>
+        <p>
           entre em contato para resolver seu problema:
-          (61) 3877-2496
+        </p>
+        <p>
+         (61) 3877-2496
         </p>
       </DivAssistencia>
-
+      
     </Container>
 
 
