@@ -6,6 +6,8 @@ import Cadastro from '../pages/Cadastro';
 import Contato from '../pages/Contato';
 import Suporte from '../pages/Suporte';
 import FuncionarioCadastro from '../pages/FuncionarioCadastro';
+import SuporteTreinamento from '../pages/SuporteTreinamento';
+import SuporteManutencao from '../pages/SuporteManutencao';
 import Route from './Route';
 
 
@@ -18,6 +20,9 @@ const Routes = () => {
       <Route exact path="/Contato" component={Contato} />
       <Route exact path="/Suporte" component={Suporte} />
       <Route exact path="/FuncionarioCadastro" component={FuncionarioCadastro} />
+      <Route exact path="/SuporteTreinamento" component={SuporteTreinamento} />
+      <Route exact path="/SuporteManutencao" component={SuporteManutencao} />
+      
     </Switch>
   );
 };
