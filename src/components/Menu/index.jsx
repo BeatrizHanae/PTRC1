@@ -17,9 +17,9 @@ const Menu = () => (
 
       <ul>
         <li>
-          <a href="#">
+          <Link to="/Produtos">
             Produtos
-          </a>
+          </Link>
         </li>
         <li>
           <Link to="/Suporte">
