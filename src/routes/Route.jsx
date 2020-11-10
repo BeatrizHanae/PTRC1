@@ -5,18 +5,21 @@ import React from 'react';
 import { Route as ReactDOMRoute, Redirect } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
-function Route({ isPrivate = false, component: Component, ...rest }) {
+function Route({
+  isPrivate = false,
+  onlyPublic = false,
+  component: Component,
+  ...rest
+}) {
   const { token } = useAuth();
   return (
     <ReactDOMRoute
       {...rest}
       render={({ location }) => {
-        return !isPrivate || !token ? (
+        return !(onlyPublic && !!token) || (isPrivate && !!token) ? (
           <Component />
         ) : (
-          <Redirect
-            to={{ pathname: isPrivate ? '/' : '/dashboard', state: location }}
-          />
+          <Redirect to={{ pathname: isPrivate ? '/' : '/', state: location }} />
         );
       }}
     />

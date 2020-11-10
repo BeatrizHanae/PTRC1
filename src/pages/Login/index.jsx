@@ -3,8 +3,8 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Container, DivForm, DivImg } from './styles';
 import ImgHomeLogin from '../../assets/imgHomeLogin.png';
-import { login } from '../../services/ClientServices';
 import ButtonForm from '../../components/ButtonForm';
+import { useAuth } from '../../hooks/useAuth';
 
 const schema = Yup.object({
   USERNAME: Yup.string().required('Este campo é obrigatório!'),
@@ -12,9 +12,13 @@ const schema = Yup.object({
 });
 
 const Login = () => {
-  const callToApi = useCallback(async data => {
-    await login(data);
-  }, []);
+  const { signIn } = useAuth();
+  const callToApi = useCallback(
+    async data => {
+      await signIn(data);
+    },
+    [signIn],
+  );
   return (
     <Container>
       <DivForm>

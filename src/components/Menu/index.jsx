@@ -9,7 +9,7 @@ import { Container } from './styles';
 import { useAuth } from '../../hooks/useAuth';
 
 const Menu = () => {
-  const { token } = useAuth();
+  const { token, signOut } = useAuth();
   return (
     <Container>
       <nav>
@@ -44,6 +44,13 @@ const Menu = () => {
                 </Link>
               </li>
             </>
+          )}
+          {!!token && (
+            <li>
+              <button type="button" onClick={signOut}>
+                Sair
+              </button>
+            </li>
           )}
         </ul>
       </nav>
