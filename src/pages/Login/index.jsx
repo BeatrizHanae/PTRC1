@@ -1,84 +1,76 @@
-import React, {Component} from 'react'
-import {Container, DivForm, DivImg} from './styles'
-import ImgHomeLogin from '../../assets/imgHomeLogin.png'
-//import Button from '../../components/Button'
-import { login } from '../../services/ClientServices'
+import React, { useCallback } from 'react';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import { Container, DivForm, DivImg } from './styles';
+import ImgHomeLogin from '../../assets/imgHomeLogin.png';
+import { login } from '../../services/ClientServices';
+import ButtonForm from '../../components/ButtonForm';
 
-class Login extends Component {
-  constructor(){
-    super()
-    this.state = {
-      USERNAME: '',
-      SENHA: '',
-      errors: {}
-    }
-    this.onChange = this.onChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
-  }
-  
-  onChange(e) {
-    this.setState({[e.target.name]: e.target.value})
-  }
+const schema = Yup.object({
+  USERNAME: Yup.string().required('Este campo é obrigatório!'),
+  SENHA: Yup.string().required('Este campo é obrigatório!'),
+});
 
-  onSubmit(e) {
-    e.preventDefault()
-
-    const user = {
-      USERNAME: this.state.USERNAME,
-      SENHA: this.state.SENHA
-    }
-
-    login(user).then( response => {
-      if(response) {
-        this.props.history.push('/')
-      }
-    })
-  }
-
-
-  render(){
-    return (
+const Login = () => {
+  const callToApi = useCallback(async data => {
+    await login(data);
+  }, []);
+  return (
     <Container>
-   
-    <DivForm>
-      <h1> 
-        Bem vindo de volta!
-      </h1>
-      <form noValidate onSubmit={this.onSubmit}>
-        <label htmlFor="username">
-          Usuário:
-          <input 
-          type="text"
-          name="USERNAME"
-          value={this.state.USERNAME}
-          onChange={this.onChange}
-          />
-        </label>
-       
-        <label htmlFor="password">
-          Senha:
-          <input type="password" 
-          name="SENHA"
-          value={this.state.SENHA}
-           onChange={this.onChange}
-          />
-        </label>
-        
-        <button
-          type="submit"
-          className="btn btn-lg btn-primary btn-block">Login</button>
-        <h3>
-          Cadastre aqui!
-        </h3>
-      </form>  
-    </DivForm>
-    <DivImg>
-      <img src={ImgHomeLogin} alt="Imagen ilustrativa" />
-    </DivImg>
-
-  </Container>
-  )
-}
-
-}
+      <DivForm>
+        <h1>Bem vindo de volta!</h1>
+        <Formik
+          validationSchema={schema}
+          onSubmit={callToApi}
+          initialValues={{
+            USERNAME: '',
+            SENHA: '',
+          }}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+          }) => (
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="username">
+                Usuário:
+                {errors.USERNAME && touched.USERNAME && (
+                  <span>{errors.USERNAME}</span>
+                )}
+                <input
+                  type="text"
+                  name="USERNAME"
+                  value={values.USERNAME}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+              </label>
+              <label htmlFor="password">
+                Senha:
+                {errors.SENHA && touched.SENHA && <span>{errors.SENHA}</span>}
+                <input
+                  type="password"
+                  name="SENHA"
+                  value={values.SENHA}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+              </label>
+              <ButtonForm disabled={isSubmitting}>Login</ButtonForm>
+              <h3>Cadastre aqui!</h3>
+            </form>
+          )}
+        </Formik>
+      </DivForm>
+      <DivImg>
+        <img src={ImgHomeLogin} alt="Imagen ilustrativa" />
+      </DivImg>
+    </Container>
+  );
+};
 export default Login;

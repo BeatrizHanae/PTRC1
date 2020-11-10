@@ -1,50 +1,25 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, {Component} from 'react';
-import {
-  Container,
-  DivFormCad,
-  DivImgCad,
-  DivTitulo,
-} from './styles';
+import React, { useCallback } from 'react';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import { Container, DivFormCad, DivImgCad, DivTitulo } from './styles';
 import IconCadastro from '../../assets/IconCadastro.png';
-import {cadastro} from '../../services/ClientServices'
+import { cadastro } from '../../services/ClientServices';
+import ButtonForm from '../../components/ButtonForm';
 
+const schema = Yup.object({
+  NOME: Yup.string().required('Este campo é obrigatório!'),
+  USERNAME: Yup.string().required('Este campo é obrigatório!'),
+  CPF: Yup.string().length(11, 'O CPF deve possuir 11 caracteres'),
+  SENHA: Yup.string()
+    .min(6, 'A senha deve conter no minimo 6 caracteres')
+    .required('Este campo é obrigatório!'),
+});
 
-class Cadastro extends Component {
-  constructor() {
-    super()
-    this.state = {
-      NOME: '',
-      USERNAME: '',
-      CPF: '',
-      SENHA: '',
-      errors: {}
-    }
-
-    this.onChange = this.onChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
-  }
-
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value })
-  }
-  onSubmit(e) {
-    e.preventDefault()
-
-    const newUser = {
-      NOME: this.state.NOME,
-      USERNAME: this.state.USERNAME,
-      CPF: this.state.CPF,
-      SENHA: this.state.SENHA
-    }
-
-    cadastro(newUser).then(res => {
-      this.props.history.push(`/login`)
-    })
-  }
-
-
-render(){
+const Cadastro = () => {
+  const submitToApi = useCallback(async data => {
+    await cadastro(data);
+  }, []);
   return (
     <Container>
       <DivTitulo>
@@ -52,42 +27,89 @@ render(){
         <h2>Cadastro</h2>
       </DivTitulo>
       <DivFormCad>
-        <form noValidate onSubmit={this.onSubmit}>
-          <label>
-            Nome Completo:
-            <input type="text" 
-            name = "NOME"
-            value={this.state.NOME}
-            onChange={this.onChange}/>
-          </label>
+        <Formik
+          onSubmit={submitToApi}
+          initialValues={{
+            NOME: '',
+            SENHA: '',
+            USERNAME: '',
+            CPF: '',
+          }}
+          validationSchema={schema}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+          }) => (
+            <form onSubmit={handleSubmit}>
+              <label>
+                Nome Completo:
+                {errors.NOME && touched.NOME && <span>{errors.NOME}</span>}
+                <input
+                  type="text"
+                  name="NOME"
+                  onChange={handleChange}
+                  value={values.NOME}
+                  onBlur={handleBlur}
+                  touched={touched.NOME}
+                />
+              </label>
 
-          <label>
-            Username:
-            <input type="text"
-            name = "USERNAME"
-            value={this.state.USERNAME}
-            onChange={this.onChange} />
-          </label>
+              <label>
+                Username:
+                {errors.USERNAME && touched.USERNAME && (
+                  <span>{errors.USERNAME}</span>
+                )}
+                <input
+                  type="text"
+                  name="USERNAME"
+                  onChange={handleChange}
+                  value={values.USERNAME}
+                  onBlur={handleBlur}
+                  touched={touched.USERNAME}
+                />
+              </label>
 
-          <label>
-            CPF/CNPJ:
-            <input type="text"
-            name = "CPF"
-            value={this.state.CPF}
-            onChange={this.onChange} />
-          </label>
+              <label>
+                CPF/CNPJ:
+                {errors.CPF && touched.CPF && <span>{errors.CPF}</span>}
+                <input
+                  type="text"
+                  name="CPF"
+                  onChange={handleChange}
+                  value={values.CPF}
+                  onBlur={handleBlur}
+                  touched={touched.CPF}
+                />
+              </label>
 
-          <label>
-            Senha:
-            <input type="password"
-            name = "SENHA"
-            value={this.state.SENHA}
-            onChange={this.onChange} />
-          </label>
-          <button className="btn btn-lg btn-primary btn-block">
-            Finalizar
-          </button>
-        </form>
+              <label>
+                Senha:
+                {errors.SENHA && touched.SENHA && <span>{errors.SENHA}</span>}
+                <input
+                  type="password"
+                  name="SENHA"
+                  onChange={handleChange}
+                  values={values.SENHA}
+                  onBlur={handleBlur}
+                  touched={touched.SENHA}
+                />
+              </label>
+              <ButtonForm
+                type="submit"
+                className="btn btn-lg btn-primary btn-block"
+                disabled={isSubmitting}
+              >
+                Finalizar
+              </ButtonForm>
+            </form>
+          )}
+        </Formik>
       </DivFormCad>
 
       <DivImgCad>
@@ -96,8 +118,7 @@ render(){
 
       <h2>Oferecemos a maior linha de produtos para a sua empresa.</h2>
     </Container>
-    ) 
-  }
-}
+  );
+};
 
-export default Cadastro
+export default Cadastro;
