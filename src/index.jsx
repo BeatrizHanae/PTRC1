@@ -6,20 +6,20 @@ import Footer from './components/Footer';
 import Routes from './routes';
 import GlobalCss from './styles/global';
 import LinhasImg from './components/LinhasImg';
-import serviceWorker from "./serviceWorker";
-
+import serviceWorker from './serviceWorker';
+import { AuthProvider } from './hooks/useAuth';
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalCss />
-    
-    <BrowserRouter basename="/">
-      <Menu />
-      <Routes />
-      <LinhasImg />
-      <Footer />
-    </BrowserRouter>
-    
+    <AuthProvider>
+      <GlobalCss />
+      <BrowserRouter basename="/">
+        <Menu />
+        <Routes />
+        <LinhasImg />
+        <Footer />
+      </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

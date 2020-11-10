@@ -1,29 +1,26 @@
-import axios from 'axios'
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
+import api from './ApiService';
 
 export const cadastro = newUser => {
-  return axios
-    .post('http://localhost:5000/api/apiClients/cadastro', {
+  return api
+    .post('/apiClients/cadastro', {
       NOME: newUser.NOME,
       USERNAME: newUser.USERNAME,
       CPF: newUser.CPF,
-      SENHA: newUser.SENHA
+      SENHA: newUser.SENHA,
     })
-    .then(response => {
-      console.log('Cliente Cadastrado')
-    })
-}
+    .then(_response => {
+      console.log('Cliente Cadastrado');
+    });
+};
 
-export const login = client => {
-  return axios
-    .post('http://localhost:5000/api/apiClients/login', {
-      USERNAME: client.USERNAME,
-      SENHA: client.SENHA
-    })
-    .then(response => {
-      localStorage.setItem('usertoken', response.data)
-      return response.data
-    })
-    .catch(err => {
-      console.log(err)
-    })
-}
+export const login = async client => {
+  const response = await api.post('/apiClients/login', {
+    USERNAME: client.USERNAME,
+    SENHA: client.SENHA,
+  });
+
+  localStorage.setItem('usertoken', response.data);
+  return response.data;
+};
