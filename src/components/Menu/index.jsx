@@ -17,14 +17,14 @@ const Menu = () => (
 
       <ul>
         <li>
-          <a href="#">
+          <Link to="/Produtos">
             Produtos
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="/Suporte">
             Suporte
-          </a>
+          </Link>
         </li>
         <li>
           <Link to="/Contato">

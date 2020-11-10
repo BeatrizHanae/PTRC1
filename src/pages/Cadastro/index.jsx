@@ -9,6 +9,7 @@ import {
 import IconCadastro from '../../assets/IconCadastro.png';
 import {cadastro} from '../../services/ClientServices'
 
+
 class Cadastro extends Component {
   constructor() {
     super()
@@ -87,7 +88,6 @@ render(){
             Finalizar
           </button>
         </form>
-
       </DivFormCad>
 
       <DivImgCad>
