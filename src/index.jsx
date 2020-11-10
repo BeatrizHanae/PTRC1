@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import Routes from './routes';
 import GlobalCss from './styles/global';
 import LinhasImg from './components/LinhasImg';
+import serviceWorker from "./serviceWorker";
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,3 +23,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
+
+serviceWorker();

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, {Component} from 'react';
 import {
   Container,
   DivFormCad,
@@ -7,9 +7,43 @@ import {
   DivTitulo,
 } from './styles';
 import IconCadastro from '../../assets/IconCadastro.png';
-import Button from '../../components/Button'
+import {cadastro} from '../../services/ClientServices'
 
-const Cadastro = () => {
+class Cadastro extends Component {
+  constructor() {
+    super()
+    this.state = {
+      NOME: '',
+      USERNAME: '',
+      CPF: '',
+      SENHA: '',
+      errors: {}
+    }
+
+    this.onChange = this.onChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+  onSubmit(e) {
+    e.preventDefault()
+
+    const newUser = {
+      NOME: this.state.NOME,
+      USERNAME: this.state.USERNAME,
+      CPF: this.state.CPF,
+      SENHA: this.state.SENHA
+    }
+
+    cadastro(newUser).then(res => {
+      this.props.history.push(`/login`)
+    })
+  }
+
+
+render(){
   return (
     <Container>
       <DivTitulo>
@@ -17,29 +51,41 @@ const Cadastro = () => {
         <h2>Cadastro</h2>
       </DivTitulo>
       <DivFormCad>
-        <form>
+        <form noValidate onSubmit={this.onSubmit}>
           <label>
             Nome Completo:
-            <input type="text" />
+            <input type="text" 
+            name = "NOME"
+            value={this.state.NOME}
+            onChange={this.onChange}/>
           </label>
 
           <label>
             Username:
-            <input type="text" />
+            <input type="text"
+            name = "USERNAME"
+            value={this.state.USERNAME}
+            onChange={this.onChange} />
           </label>
 
           <label>
             CPF/CNPJ:
-            <input type="text" />
+            <input type="text"
+            name = "CPF"
+            value={this.state.CPF}
+            onChange={this.onChange} />
           </label>
 
           <label>
             Senha:
-            <input type="password" />
+            <input type="password"
+            name = "SENHA"
+            value={this.state.SENHA}
+            onChange={this.onChange} />
           </label>
-          <Button>
+          <button className="btn btn-lg btn-primary btn-block">
             Finalizar
-          </Button>
+          </button>
         </form>
 
       </DivFormCad>
@@ -50,7 +96,8 @@ const Cadastro = () => {
 
       <h2>Oferecemos a maior linha de produtos para a sua empresa.</h2>
     </Container>
-  );
-};
+    ) 
+  }
+}
 
-export default Cadastro;
+export default Cadastro
