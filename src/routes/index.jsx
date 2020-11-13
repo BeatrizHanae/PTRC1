@@ -20,7 +20,7 @@ const Routes = () => {
       <Route onlyPublic exact path="/cadastro" component={Cadastro} />
       <Route exact path="/Contato" component={Contato} />
       <Route exact path="/Suporte" component={Suporte} />
-      <Route exact path="/Produtos" component={Produtos} />
+      <Route exact path="/Produtos" component={Produtos} admin />
       <Route
         exact
         path="/FuncionarioCadastro"

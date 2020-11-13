@@ -22,18 +22,19 @@ export const login = async client => {
   });
 
   localStorage.setItem('usertoken', response.data.token);
-  return response.data.token;
+  const { data } = response;
+  return data;
 };
 
 export const contato = async newContato => {
   return api
-  .post('/apiContatos/contato', {
-    NOME: newContato.NOME,
-    EMAIL: newContato.EMAIL,
-    MENSAGEM: newContato.MENSAGEM,
-    TELEFONE: newContato.TELEFONE,
-  })
-  .then(_response => {
-    console.log('Mensagem enviada');
-  });
+    .post('/apiContatos/contato', {
+      NOME: newContato.NOME,
+      EMAIL: newContato.EMAIL,
+      MENSAGEM: newContato.MENSAGEM,
+      TELEFONE: newContato.TELEFONE,
+    })
+    .then(_response => {
+      console.log('Mensagem enviada');
+    });
 };

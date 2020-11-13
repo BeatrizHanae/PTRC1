@@ -7,17 +7,19 @@ import { useAuth } from '../hooks/useAuth';
 
 function Route({
   isPrivate = false,
-  onlyPublic = false,
+  admin = false,
   component: Component,
   ...rest
 }) {
-  const { token } = useAuth();
+  const { data } = useAuth();
   return (
     <ReactDOMRoute
       {...rest}
       render={({ location }) => {
-        return !(onlyPublic && !!token) || (isPrivate && !!token) ? (
-          <Component />
+        return (admin && data.ADMIN) ||
+          (isPrivate && data) ||
+          (!isPrivate && (!admin || !data)) ? (
+            <Component />
         ) : (
           <Redirect to={{ pathname: isPrivate ? '/' : '/', state: location }} />
         );
