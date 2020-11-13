@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {
   Container,
   DivFormCTT,
@@ -13,8 +13,12 @@ import IconLocalizacao from '../../assets/IconLocalizacao.png';
 import IconTelefone from '../../assets/IconTelefone.png';
 import IconWhatsapp from '../../assets/IconWhatsapp.png';
 import ImgMapa from '../../assets/ImgMapa.png';
-import Button from '../../components/Button';
-import LinhasImg from '../../components/LinhasImg';
+import ButtonForm from '../../components/ButtonForm';
+//import LinhasImg from '../../components/LinhasImg';
+import { contato } from '../../services/ClientServices';
+import * as Yup from 'yup';
+import { Formik } from 'formik';
+
 
 const contatos = [
   {
@@ -39,36 +43,102 @@ const contatos = [
   },
 
 ]
+const schema = Yup.object({
+  NOME: Yup.string().required('Este campo é obrigatório!'),
+  EMAIL: Yup.string().email().required('Este campo é obrigatório'),
+  MENSAGEM: Yup.string().required('Por favor digite uma mensagem.'),
+  TELEFONE: Yup.number().min(11).required('Por favor só números.')
+
+})
 
 const Contato = () => {
-
+  const submitToApi = useCallback(async data => {
+    await contato(data);
+  }, []);
   return (
     <Container>
       <DivFormCTT>
-        <form>
+        <Formik    
+          onSubmit={submitToApi}
+          initialValues={{
+            NOME: '',
+            EMAIL: '',
+            MENSAGEM: '',
+            TELEFONE: '',
+          }}
+          validationSchema={schema}>
+             {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+          }) => (
+          <form onSubmit={handleSubmit}>
           <label>
             Nome e Sobrenome:
-                <input type="text" />
+            {errors.NOME && touched.NOME && <span>{errors.NOME}</span>}
+                <input                  
+                  type="text"
+                  name="NOME"
+                  onChange={handleChange}
+                  value={values.NOME}
+                  onBlur={handleBlur}
+                  touched={touched.NOME}/>
           </label>
 
           <label>
             Email:
-            <input type="text" />
+            {errors.EMAIL && touched.EMAIL && (
+                  <span>{errors.EMAIL}</span>
+                )}
+                <input
+                  type="mail"
+                  name="EMAIL"
+                  onChange={handleChange}
+                  value={values.EMAIL}
+                  onBlur={handleBlur}
+                  touched={touched.EMAIL}
+                />
           </label>
 
           <label>
             Sua mensagem:
-                <input type="text" />
+            {errors.MENSAGEM && touched.MENSAGEM && <span>{errors.MENSAGEM}</span>}
+                <input
+                  type="text"
+                  name="MENSAGEM"
+                  onChange={handleChange}
+                  value={values.MENSAGEM}
+                  onBlur={handleBlur}
+                  touched={touched.MENSAGEM}
+                />
           </label>
 
           <label>
             Telefone:
-                <input type="text" />
+            {errors.TELEFONE && touched.TELEFONE && <span>{errors.TELEFONE}</span>}
+                <input
+                  type="text"
+                  name="TELEFONE"
+                  onChange={handleChange}
+                  values={values.TELEFONE}
+                  onBlur={handleBlur}
+                  touched={touched.TELEFONE}
+                />
           </label>
-        </form>
-        <Button>
-          Enviar
-        </Button>
+          <ButtonForm
+                type="submit"
+                className="btn btn-lg btn-primary btn-block"
+                disabled={isSubmitting}
+              >
+                Enviar
+          </ButtonForm>
+          </form>
+          )}
+        </Formik>
       </DivFormCTT>
 
       <DivImgCTT>

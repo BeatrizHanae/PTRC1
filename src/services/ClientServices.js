@@ -4,7 +4,7 @@ import api from './ApiService';
 
 export const cadastro = newUser => {
   return api
-    .post('/apiClients/cadastro', {
+    .post('/apiUsers/cadastro', {
       NOME: newUser.NOME,
       USERNAME: newUser.USERNAME,
       CPF: newUser.CPF,
@@ -16,11 +16,24 @@ export const cadastro = newUser => {
 };
 
 export const login = async client => {
-  const response = await api.post('/apiClients/login', {
+  const response = await api.post('/apiUsers/login', {
     USERNAME: client.USERNAME,
     SENHA: client.SENHA,
   });
 
-  localStorage.setItem('usertoken', response.data);
-  return response.data;
+  localStorage.setItem('usertoken', response.data.token);
+  return response.data.token;
+};
+
+export const contato = async newContato => {
+  return api
+  .post('/apiContatos/contato', {
+    NOME: newContato.NOME,
+    EMAIL: newContato.EMAIL,
+    MENSAGEM: newContato.MENSAGEM,
+    TELEFONE: newContato.TELEFONE,
+  })
+  .then(_response => {
+    console.log('Mensagem enviada');
+  });
 };
