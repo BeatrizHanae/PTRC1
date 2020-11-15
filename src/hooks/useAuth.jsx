@@ -5,7 +5,7 @@ import { login } from '../services/ClientServices';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(() => {
+  const [data, setData] = useState(() => {
     const tokenInLocalStorage = localStorage.getItem(`usertoken`);
 
     if (tokenInLocalStorage) return tokenInLocalStorage;
@@ -14,16 +14,16 @@ export const AuthProvider = ({ children }) => {
 
   const signOut = useCallback(async () => {
     localStorage.removeItem('usertoken');
-    setToken(undefined);
+    setData(undefined);
   }, []);
 
-  const signIn = useCallback(async data => {
-    const tokenToSave = await login(data);
-    setToken(tokenToSave);
+  const signIn = useCallback(async form => {
+    const dataToSave = await login(form);
+    setData(dataToSave);
   }, []);
 
   return (
-    <AuthContext.Provider value={{ token, signOut, signIn }}>
+    <AuthContext.Provider value={{ data, signOut, signIn }}>
       {children}
     </AuthContext.Provider>
   );

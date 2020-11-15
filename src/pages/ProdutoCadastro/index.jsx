@@ -2,15 +2,15 @@ import React, { useCallback } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Img_Funcionario_Cadastro from '../../assets/Img_Funcionario_Cadastro.png';
-import { Container,} from './styles';
+import { Container,DivFormCad} from './styles';
 import ButtonForm from '../../components/ButtonForm';
 import { cadastroProduto } from '../../services/ClientServices';
 
 const schema = Yup.object({
   NOME:Yup.string().required('Este campo é obrigatório!'),
-  ID_PRODUCT: Yup.number()/*.integer('Por favor insira um número inteiro.')*/.required('Este campo é obrigatório.'),
+  ID_PRODUCT: Yup.string()/*.integer('Por favor insira um número inteiro.')*/.required('Este campo é obrigatório.'),
   VALOR: Yup.string().required('Este campo é obrigatório!'),
-  QUANTIDADE: Yup.number()/*.integer('Por favor insira um número inteiro.')*/.required('Este campo é obrigatório.'),
+  QUANTIDADE: Yup.string()/*.integer('Por favor insira um número inteiro.')*/.required('Este campo é obrigatório.'),
   IMAGEM: Yup.string().required('Este campo é obrigatório!')
 
 })
@@ -21,6 +21,7 @@ const ProdutoCadastro = () => {
   }, [])
   return (
     <Container>
+      <DivFormCad>
       <section>
         <img src={Img_Funcionario_Cadastro} alt=""/>
         <div>
@@ -63,14 +64,14 @@ const ProdutoCadastro = () => {
             </label>
             <label>
               Código:
-              {errors.ID && touched.ID && <span>{errors.ID}</span>}
+              {errors.ID_PRODUCT && touched.ID_PRODUCT && <span>{errors.ID_PRODUCT}</span>}
             <input 
               type="text"
-              name="ID"
+              name="ID_PRODUCT"
               onChange={handleChange}
-              value={values.ID}
+              value={values.ID_PRODUCT}
               onBlur={handleBlur}
-              touched={touched.ID} />
+              touched={touched.ID_PRODUCT} />
             </label>
             <label>
               Valor:
@@ -119,6 +120,7 @@ const ProdutoCadastro = () => {
       )}
       </Formik>
       </section>
+      </DivFormCad>
     </Container>
 
   );

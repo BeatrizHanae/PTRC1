@@ -52,8 +52,20 @@ export const Container = styled.section`
       height:40px;
     }
   }
-  
-
-`
-
+`;
+export const DivFormCad = styled.div`
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    min-width: 40vw;
+    input {
+      height: 40px;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+`;
 

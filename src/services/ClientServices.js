@@ -22,7 +22,8 @@ export const login = async client => {
   });
 
   localStorage.setItem('usertoken', response.data.token);
-  return response.data.token;
+  const { data } = response;
+  return data;
 };
 
 export const contato = async newContato => {
