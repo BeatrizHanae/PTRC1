@@ -10,6 +10,7 @@ import SuporteTreinamento from '../pages/SuporteTreinamento';
 import SuporteManutencao from '../pages/SuporteManutencao';
 import Produtos from '../pages/Produtos';
 import LoginFuncionario from '../pages/LoginFuncionario';
+import Carrinho from '../pages/Carrinho';
 import Route from './Route';
 
 const Routes = () => {
@@ -29,6 +30,8 @@ const Routes = () => {
       <Route exact path="/SuporteTreinamento" component={SuporteTreinamento} />
       <Route exact path="/SuporteManutencao" component={SuporteManutencao} />
       <Route exact path="/LoginFuncionario" component={LoginFuncionario} />
+      <Route exact path="/Carrinho" component={Carrinho} />
+      
     </Switch>
   );
 };
