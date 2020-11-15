@@ -37,3 +37,17 @@ export const contato = async newContato => {
     console.log('Mensagem enviada');
   });
 };
+
+export const cadastroProduto = async newProduto => {
+  return api
+  .post('/apiProducts/register', {
+    NOME: newProduto.NOME,
+    ID_PRODUCT: newProduto.ID_PRODUCT,
+    VALOR: newProduto.VALOR,
+    QUANTIDADE: newProduto.QUANTIDADE,
+    IMAGEM: newProduto.IMAGEM,
+  })
+  .then(_response => {
+    console.log('Produto cadastrado.');
+  });
+}

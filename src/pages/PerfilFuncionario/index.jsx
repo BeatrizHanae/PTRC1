@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from '../FuncionarioCadastro/styles';
+import { Container } from '../ProdutoCadastro/styles';
 import Button from '../../components/Button';
 import cliente1 from '../../assets/cliente1.png';
 import image1 from '../../assets/image1.png';
