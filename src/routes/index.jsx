@@ -21,10 +21,10 @@ const Routes = () => {
       <Route exact path="/Contato" component={Contato} />
       <Route exact path="/Suporte" component={Suporte} />
       <Route exact path="/Produtos" component={Produtos} />
-      <Route isPrivate path="/ProdutoCadastro" component={ProdutoCadastro} admin />
-      <Route isPrivate exact path="/SuporteTreinamento" component={SuporteTreinamento} />
-      <Route isPrivate exact path="/SuporteManutencao" component={SuporteManutencao} />
-      <Route isPrivate path="/PerfilFuncionario" component={PerfilFuncionario} admin/>
+      <Route exact path="/ProdutoCadastro" component={ProdutoCadastro} />
+      <Route exact path="/SuporteTreinamento" component={SuporteTreinamento} />
+      <Route exact path="/SuporteManutencao" component={SuporteManutencao} />
+      <Route exact path="/PerfilFuncionario" component={PerfilFuncionario} />
     </Switch>
   );
 };
