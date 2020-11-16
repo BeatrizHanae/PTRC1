@@ -1,11 +1,13 @@
 import React from 'react';
-import { Container } from '../FuncionarioCadastro/styles';
+import { Container } from '../ProdutoCadastro/styles';
 import Button from '../../components/Button';
 import cliente1 from '../../assets/cliente1.png';
 import image1 from '../../assets/image1.png';
 import orcamento1 from '../../assets/orcamento1.png';
 import { DivBotao, DivTexto } from './styles';
-const LoginFuncionario = () =>{
+
+
+const PerfilFuncionario = () =>{
  return(
    <Container>
       <DivTexto>
@@ -39,4 +41,4 @@ const LoginFuncionario = () =>{
 
 }
 
-export default LoginFuncionario
+export default PerfilFuncionario

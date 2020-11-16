@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { Container, DivForm, DivImg } from './styles';
+import { Container, DivForm, DivImg, Divagrupa } from './styles';
 import ImgHomeLogin from '../../assets/imgHomeLogin.png';
 import ButtonForm from '../../components/ButtonForm';
 import { useAuth } from '../../hooks/useAuth';
@@ -22,7 +22,8 @@ const Login = () => {
   return (
     <Container>
       <DivForm>
-        <h1>Bem vindo de volta!</h1>
+        <h1>Login</h1>
+        <h3>Bem vindo de volta!</h3>
         <Formik
           validationSchema={schema}
           onSubmit={callToApi}

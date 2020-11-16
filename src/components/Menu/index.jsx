@@ -9,7 +9,7 @@ import { Container } from './styles';
 import { useAuth } from '../../hooks/useAuth';
 
 const Menu = () => {
-  const { token, signOut } = useAuth();
+  const { data: token, signOut } = useAuth();
   return (
     <Container>
       <nav>
