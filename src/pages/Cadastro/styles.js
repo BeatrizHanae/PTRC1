@@ -31,6 +31,8 @@ export const DivFormCad = styled.div`
       flex-direction: column;
     }
   }
+  margin-left:100px;
+
 `;
 
 export const DivImgCad = styled.div`

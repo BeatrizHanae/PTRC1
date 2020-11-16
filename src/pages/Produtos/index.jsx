@@ -8,8 +8,9 @@ import prod6 from '../../assets/prod6.png';
 import prod7 from '../../assets/prod7.png';
 import prod8 from '../../assets/prod8.png';
 import prod9 from '../../assets/prod9.png';
+import search from '../../assets/search.png';
 import Button from '../../components/Button';
-import { Div1, Div2 } from './styles';
+import { Container, Div1, Div2, DivBusca, DivPrimeira } from './styles';
 
 const Produtos = () => {
   const [produtos, setProdutos] = useState([
@@ -60,6 +61,15 @@ const Produtos = () => {
     },
   ]);
   return (
+  <Container>
+    <DivPrimeira>
+    <h1>Produtos</h1>
+    <DivBusca>
+      <img src={search} alt="pesquisa" />
+      <input type="text" id="txtBusca" placeholder="...Buscar produto"/>  
+    </DivBusca>
+    </DivPrimeira>
+  
     <Div1>
       {produtos.map(produto => (
         <Div2>
@@ -70,6 +80,9 @@ const Produtos = () => {
         </Div2>
       ))}
     </Div1>
+    <h2>A jornada inteligente na automação comercial!</h2>
+  </Container>
+    
   );
 };
 export default Produtos;
