@@ -10,8 +10,9 @@ export const Container = styled.section`
   img {
     align-self: center;
   }
-  h2 {
-    padding-top: 50px;
+  >h2 {
+    padding-top: 150px;
+  
   }
 `;
 export const DivTitulo = styled.div`
@@ -24,6 +25,7 @@ export const DivTitulo = styled.div`
   }
   h2 {
     padding: 20px;
+   
   }
 `;
 
@@ -42,6 +44,7 @@ export const DivFormCad = styled.div`
     }
   }
   margin-left:100px;
+ 
 
 `;
 
