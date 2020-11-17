@@ -28,3 +28,9 @@ export const DivBotao = styled.div`
     
   }
 `
+export const ButtonLink = styled.div`
+margin-left: 275px;
+a{
+  color: black;
+}
+`

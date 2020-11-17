@@ -13,7 +13,6 @@ const Menu = () => {
   return (
     <Container>
       <nav>
-        c
         <div>
           <img src={logoImagem} alt="Logo Imagem" />
           <img src={logoMarca} alt="Logo Marca" />
@@ -48,7 +47,9 @@ const Menu = () => {
           {!!token && (
             <li>
               <button type="button" onClick={signOut}>
-                Sair
+              <Link style={{background: "black"}} to="/" className="home">
+                  Sair
+                </Link>
               </button>
             </li>
           )}

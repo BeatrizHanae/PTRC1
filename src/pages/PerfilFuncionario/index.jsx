@@ -4,7 +4,8 @@ import Button from '../../components/Button';
 import cliente1 from '../../assets/cliente1.png';
 import image1 from '../../assets/image1.png';
 import orcamento1 from '../../assets/orcamento1.png';
-import { DivBotao, DivTexto } from './styles';
+import { DivBotao, DivTexto, ButtonLink } from './styles';
+import { Link } from 'react-router-dom';
 
 
 const PerfilFuncionario = () =>{
@@ -24,7 +25,9 @@ const PerfilFuncionario = () =>{
       <DivBotao>
           <Button>
             <img src={image1} alt= "cadastrar produto" />
-            Cadastrar Produto
+            <ButtonLink>
+              <Link  to="/ProdutoCadastro">Cadastrar Produtos</Link>
+            </ButtonLink>
           </Button>
           <Button>
             <img src={orcamento1} alt=" orçamento" />
