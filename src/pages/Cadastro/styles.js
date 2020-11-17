@@ -10,18 +10,28 @@ export const Container = styled.section`
   img {
     align-self: center;
   }
+  > h2 {
+    padding-top: 150px;
+  }
 `;
 export const DivTitulo = styled.div`
   width: 100%;
   flex-direction: column;
   text-align: center;
+  h1 {
+    padding-top: 0px;
+    text-decoration: underline;
+  }
+  h3 {
+    padding: 20px;
+  }
 `;
 
 export const DivFormCad = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     min-width: 40vw;
     input {
       height: 40px;
@@ -31,6 +41,7 @@ export const DivFormCad = styled.div`
       flex-direction: column;
     }
   }
+  margin-left: 100px;
 `;
 
 export const DivImgCad = styled.div`
@@ -49,4 +60,3 @@ export const DivImgCad = styled.div`
     padding: 20px;
   }
 `;
-

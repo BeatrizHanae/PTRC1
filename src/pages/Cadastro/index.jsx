@@ -23,8 +23,8 @@ const Cadastro = () => {
   return (
     <Container>
       <DivTitulo>
-        <h1>Bem vindo!</h1>
-        <h2>Cadastro</h2>
+        <h1>Cadastro</h1>
+        <h3>Bem vindo!</h3>
       </DivTitulo>
       <DivFormCad>
         <Formik
