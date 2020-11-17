@@ -59,6 +59,10 @@ export const QuemSomos = styled(Section)`
   p {
     max-width: 60%;
     text-align: center;
+    line-height: 35px;
+  }
+  h1 {
+    padding-bottom: 50px;
   }
 `;
 
