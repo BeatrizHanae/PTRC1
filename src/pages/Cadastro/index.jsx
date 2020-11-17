@@ -24,7 +24,7 @@ const Cadastro = () => {
     <Container>
       <DivTitulo>
         <h1>Cadastro</h1>
-        <h2>Bem vindo!</h2>
+        <h3>Bem vindo!</h3>
       </DivTitulo>
       <DivFormCad>
         <Formik
