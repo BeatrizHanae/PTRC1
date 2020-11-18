@@ -71,7 +71,7 @@ const Login = () => {
                 <h5>
                   {' '}
                   Não tem cadastro?
-                  <a href="../pages/Cadastro"> Cadastre-se aqui</a> !
+                  <a href="/Cadastro"> Cadastre-se aqui</a> !
                 </h5>
               </form>
             )}
