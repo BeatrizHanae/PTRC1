@@ -10,6 +10,11 @@ export const DivTexto = styled.div`
  display:flex;
  flex-direction:column;
  align-items:center;
+ justify-content:center;
+ h5{
+  font-size:18px; }
+  gap:10px;   
+  padding-top: 10px;
 `
 export const DivBotao = styled.div`
 

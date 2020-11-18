@@ -13,14 +13,16 @@ const PerfilFuncionario = () =>{
    <Container>
       <DivTexto>
         <h2>
-          Título
+          Perfil Funcionário
         </h2>
         <p>
-            Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, 
-           als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ustrie.
-           Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein un
+          <h5>“Todo crescimento depende de atividade. Não há desenvolvimento físico ou intelectual sem esforço, e esforço significa trabalho. ”</h5>
+        
+                               
         </p>
-       
+       <p>
+       Aqui você terá tudo necessário para colaborar com nosso site!
+       </p>
       </DivTexto>  
       <DivBotao>
           <Button>
