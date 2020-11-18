@@ -1,49 +1,78 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  display:flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  h1 {
+    padding-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+  }
+`;
+export const Divagrupa = styled.div`
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-
 `;
-export const DivFormCTT  = styled.div` 
- display: flex;
- flex-direction: column;
-  form{
+
+export const DivFormCTT = styled.div`
+  display: flex;
+  flex-direction: column;
+  form {
     padding: 20px;
     input {
       height: 40px;
       width: 550px;
     }
+    #teste {
+      display: flex;
+      padding-left: 10px;
+      width: 550px;
+      justify-content: center;
+      margin-left: 10px;
+    }
   }
- 
-  label{
+
+  label {
     display: flex;
     flex-direction: column;
-    
-    
+    padding: 10px;
+  }
+
+  h1 {
+    text-decoration: underline;
+    text-align: center;
   }
 `;
 export const DivIcon = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px;
-  >img{
+  > img {
     width: 30px;
-    align-self:center;
+    align-self: center;
   }
-
-`
+  p {
+    padding-left: 10px;
+  }
+`;
 export const Divmapa = styled.div`
-
-`
+  padding-left: 10px;
+`;
+export const ButtonForm = styled.div`
+  padding: 10px;
+`;
 export const DivImgCTT = styled.div`
-  
+  padding-top: 50px;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   flex-wrap: wrap;
-  
-  
+
+  > p {
+    padding-left: 20px;
+  }
 `;

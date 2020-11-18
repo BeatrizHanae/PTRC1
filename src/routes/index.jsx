@@ -9,7 +9,9 @@ import ProdutoCadastro from '../pages/ProdutoCadastro';
 import SuporteTreinamento from '../pages/SuporteTreinamento';
 import SuporteManutencao from '../pages/SuporteManutencao';
 import Produtos from '../pages/Produtos';
+import Carrinho from '../pages/Carrinho';
 import PerfilFuncionario from '../pages/PerfilFuncionario';
+import PerfilCliente from '../pages/PerfilCliente';
 import Route from './Route';
 
 const Routes = () => {
@@ -24,7 +26,10 @@ const Routes = () => {
       <Route exact path="/ProdutoCadastro" component={ProdutoCadastro} />
       <Route exact path="/SuporteTreinamento" component={SuporteTreinamento} />
       <Route exact path="/SuporteManutencao" component={SuporteManutencao} />
+      <Route exact path="/Carrinho" component={Carrinho} />
       <Route exact path="/PerfilFuncionario" component={PerfilFuncionario} />
+      <Route exact path="/PerfilCliente" component={PerfilCliente} />
+
     </Switch>
   );
 };
