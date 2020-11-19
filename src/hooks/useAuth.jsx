@@ -17,10 +17,13 @@ export const AuthProvider = ({ children }) => {
     setData(undefined);
   }, []);
 
-  const signIn = useCallback(async form => {
-    const dataToSave = await login(form);
+  const signIn = async (data) => {
+    const dataToSave = await login(data);
     setData(dataToSave);
-  }, []);
+    console.log(data)
+    console.log(dataToSave)
+  }
+
 
   return (
     <AuthContext.Provider value={{ data, signOut, signIn }}>

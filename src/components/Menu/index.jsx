@@ -9,27 +9,30 @@ import { Container } from './styles';
 import { useAuth } from '../../hooks/useAuth';
 
 const Menu = () => {
-  const { data: token, signOut } = useAuth();
+  const { data, signOut } = useAuth();
+  console.log(data)
   return (
     <Container>
       <nav>
-        c
         <div>
           <img src={logoImagem} alt="Logo Imagem" />
           <img src={logoMarca} alt="Logo Marca" />
         </div>
-        <ul>
+        <ul>      
+          <li>
+            <Link to="/">Home</Link>
+          </li>
           <li>
             <Link to="/Produtos">Produtos</Link>
           </li>
-          <li>
-            <Link to="/Suporte">Suporte</Link>
-          </li>
-          <li>
-            <Link to="/Contato">Contato</Link>
-          </li>
-          {!token && (
+          {!data && (
             <>
+              <li>
+              <Link to="/Suporte">Suporte</Link>
+              </li>
+              <li>
+               <Link to="/Contato">Contato</Link>
+              </li>
               <li>
                 <Link to="/cadastro">Cadastro</Link>
               </li>
@@ -45,13 +48,62 @@ const Menu = () => {
               </li>
             </>
           )}
-          {!!token && (
+          {data && data.token &&!data.ADMIN &&(
+            <>
             <li>
-              <button type="button" onClick={signOut}>
-                Sair
-              </button>
+              <Link to="/Suporte">Suporte</Link>
             </li>
+            <li>
+               <Link to="/Contato">Contato</Link>
+            </li>
+            <li>
+                <Link to="/Carrinho" >
+                  Orçamento
+                </Link>
+            </li>
+            <li>
+                <Link to="/SuporteManutencao">
+                  Manutenção
+                </Link>
+              </li>
+              <li>
+                <Link to="/SuporteTreinamento" >
+                  Treinamento
+                </Link>
+              </li>
+              <li>
+                <Link to="/PerfilCliente" >
+                  PerfilC
+                </Link>
+              </li>
+              <button type="button" onClick={signOut}>
+              <Link style={{background: "black"}} to="/" className="home">
+                  Sair
+                </Link>
+              </button>
+            </>
           )}
+          {!!data && data.token && data.ADMIN &&(
+              <>
+              <li>
+                <Link to="/ProdutoCadastro" >
+                  Cadastrar
+                </Link>
+              </li>
+              <li>
+               <Link to="/PerfilFuncionario" >
+                PerfilF
+                </Link>
+              </li>
+              <li>
+                <button type="button" onClick={signOut}>
+                 <Link style={{background: "black"}} to="/" className="home">
+                  Sair
+                 </Link>
+                </button>
+              </li>
+            </>
+          )} 
         </ul>
       </nav>
     </Container>

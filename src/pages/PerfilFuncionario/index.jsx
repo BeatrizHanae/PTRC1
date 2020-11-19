@@ -4,7 +4,8 @@ import Button from '../../components/Button';
 import cliente1 from '../../assets/cliente1.png';
 import image1 from '../../assets/image1.png';
 import orcamento1 from '../../assets/orcamento1.png';
-import { DivBotao, DivTexto } from './styles';
+import { DivBotao, DivTexto, ButtonLink } from './styles';
+import { Link } from 'react-router-dom';
 
 
 const PerfilFuncionario = () =>{
@@ -12,19 +13,23 @@ const PerfilFuncionario = () =>{
    <Container>
       <DivTexto>
         <h2>
-          Título
+          Perfil Funcionário
         </h2>
         <p>
-            Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, 
-           als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ustrie.
-           Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein un
+          <h5>“Todo crescimento depende de atividade. Não há desenvolvimento físico ou intelectual sem esforço, e esforço significa trabalho. ”</h5>
+        
+                               
         </p>
-       
+       <p>
+       Aqui você terá tudo necessário para colaborar com nosso site!
+       </p>
       </DivTexto>  
       <DivBotao>
           <Button>
             <img src={image1} alt= "cadastrar produto" />
-            Cadastrar Produto
+            <ButtonLink>
+              <Link  to="/ProdutoCadastro">Cadastrar Produtos</Link>
+            </ButtonLink>
           </Button>
           <Button>
             <img src={orcamento1} alt=" orçamento" />

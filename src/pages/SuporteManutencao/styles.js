@@ -7,10 +7,13 @@ export const Container = styled.section`
   justify-content: center;
   width: 70%;
   gap: 40px;
+  align-content:center;
   h2{
     display: flex;
     justify-content: center;
     text-decoration: underline;
+    padding-top: 20px;
+    
   }
  
 `
