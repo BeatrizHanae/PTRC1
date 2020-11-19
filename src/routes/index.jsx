@@ -12,6 +12,8 @@ import Produtos from '../pages/Produtos';
 import Carrinho from '../pages/Carrinho';
 import PerfilFuncionario from '../pages/PerfilFuncionario';
 import PerfilCliente from '../pages/PerfilCliente';
+import Sucesso from '../pages/Sucesso';
+import Fracasso from '../pages/Fracasso';
 import Route from './Route';
 
 const Routes = () => {
@@ -29,6 +31,8 @@ const Routes = () => {
       <Route exact path="/Carrinho" component={Carrinho} />
       <Route exact path="/PerfilFuncionario" component={PerfilFuncionario} />
       <Route exact path="/PerfilCliente" component={PerfilCliente} />
+      <Route exact path="/Sucesso" component={Sucesso} />
+      <Route exact path="/Fracasso" component={Fracasso} />
 
     </Switch>
   );
