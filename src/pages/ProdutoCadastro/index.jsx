@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import {useHistory} from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Img_Funcionario_Cadastro from '../../assets/Img_Funcionario_Cadastro.png';
@@ -16,9 +17,17 @@ const schema = Yup.object({
 })
 
 const ProdutoCadastro = () => {
-  const submitToApi = useCallback(async data => {
-    await cadastroProduto(data);
-  }, [])
+  const history = useHistory();
+  const submitToApi = useCallback(async data => {    
+      try {
+        await cadastroProduto(data);
+        history.push('/Sucesso');
+      } catch (err) {
+        history.push('/Fracasso');
+      }
+    },
+    [history],
+   []);
   return (
     <Container>
       <DivFormCad>

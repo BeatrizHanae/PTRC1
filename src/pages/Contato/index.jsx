@@ -1,4 +1,5 @@
-import React, { useCallback } from 'react';
+import React, { useCallback  } from 'react';
+import {useHistory} from 'react-router-dom';
 import {
   Container,
   DivFormCTT,
@@ -50,8 +51,14 @@ const schema = Yup.object({
 });
 
 const Contato = () => {
+  const history = useHistory();
   const submitToApi = useCallback(async data => {
-    await contato(data);
+      try{
+        await contato(data);
+        history.push('/Sucesso');
+      } catch{
+        history.push('/Fracasso');
+      }
   }, []);
   return (
     <Container>

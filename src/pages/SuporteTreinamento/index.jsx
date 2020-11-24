@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import {useHistory} from 'react-router-dom';
 import { DivFormT ,
         Container,
         DivImgT
@@ -19,9 +20,18 @@ const schema = Yup.object({
 })
 
 const SuporteTreinamento = () => {
-  const submitToApi = useCallback(async data => {
-    await suporteTreinamento(data);
-  }, []);
+  const history = useHistory();
+  const submitToApi = useCallback(
+    async data => {
+      try {
+        await suporteTreinamento(data);
+        history.push('/Sucesso');
+      } catch (err) {
+        history.push('/Fracasso');
+      }
+    },
+    [history],
+  []);
   return( 
     <Container>
     <DivFormT>

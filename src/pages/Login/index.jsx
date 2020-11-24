@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import {useHistory} from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Container, DivForm, DivImg, Divagrupa } from './styles';
@@ -13,9 +14,15 @@ const schema = Yup.object({
 
 const Login = () => {
   const { signIn } = useAuth();
-  const callToApi = useCallback(
-    async data => {
-      await signIn(data);
+  const history = useHistory();
+  const callToApi = useCallback(   
+    async data => {     
+        try{
+          await signIn(data);
+          history.push('/Sucesso');
+        } catch{
+          history.push('/Fracasso');
+        }
     },
     [signIn],
   );
