@@ -53,6 +53,12 @@ export const cadastroProduto = async newProduto => {
   });
 }
 
+export const todosProdutos = async produtos => {
+  const data = await api.get('/apiProducts/listar_produtos')
+  console.log(data.data)
+  return data.data  
+}
+
 export const suporteManutencao = async newManutencao => {
   return api
   .post('/apiSuporte/suportemanutencao',{
