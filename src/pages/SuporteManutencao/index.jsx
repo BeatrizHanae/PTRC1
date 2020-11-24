@@ -69,6 +69,7 @@ const SuporteManutencao = () => {
             values={values.DATA}
             onBlur={handleBlur}
             touched={touched.DATA}
+            style={{margin: '0px 30px 0px 10px'}}
           />
           <input 
             type="time"

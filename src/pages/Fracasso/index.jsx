@@ -1,7 +1,8 @@
-import React, { useCallback } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import ImgFracasso from '../../assets/ImgFracasso.png';
 import Button from '../../components/Button';
-import { Conteiner, Divimg, Divtext } from './styles';
+import { Conteiner, Divimg, Divtext, ButtonVolta } from './styles';
 
 const Fracasso = () => {
   return(
@@ -9,7 +10,9 @@ const Fracasso = () => {
       <Divtext>
         <h1>Ops! Algo está errado.</h1>
         <p>Tente novamente.</p>
-        <Button>Voltar</Button>
+        <Link to ="/">
+          <Button>Voltar</Button>
+        </Link> 
       </Divtext>
       <Divimg>
         <img src={ImgFracasso} alt="" />

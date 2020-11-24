@@ -1,4 +1,5 @@
-import React, { useCallback } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import ImgSucesso from '../../assets/ImgSucesso.png';
 import Button from '../../components/Button';
 import { Conteiner, Divimg, Divtext } from './styles';
@@ -8,7 +9,9 @@ const Sucesso = () => {
     <Conteiner>
       <Divtext>
         <h1>Processo concluído com sucesso!</h1>
-        <Button>Voltar</Button>
+        <Link to="/">
+          <Button>Voltar</Button>
+        </Link>
       </Divtext>
       <Divimg>
         <img src={ImgSucesso} alt="" />

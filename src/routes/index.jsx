@@ -21,17 +21,16 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route onlyPublic exact path="/login" component={Login} />
-      <Route onlyPublic exact path="/cadastro" component={Cadastro} />
+      <Route onlyPublic exact path="/Login" component={Login} />
+      <Route onlyPublic exact path="/Cadastro" component={Cadastro} />
       <Route exact path="/Contato" component={Contato} />
       <Route exact path="/Suporte" component={Suporte} />
       <Route exact path="/Produtos" component={Produtos} />
-      <Route exact path="/ProdutoCadastro" component={ProdutoCadastro} />
-      <Route exact path="/SuporteTreinamento" component={SuporteTreinamento} />
-      <Route exact path="/SuporteManutencao" component={SuporteManutencao} />
-      <Route exact path="/Carrinho" component={Carrinho} />
-      <Route exact path="/PerfilFuncionario" component={PerfilFuncionario} />
-      <Route exact path="/PerfilCliente" component={PerfilCliente} />
+      <Route isPrivate path="/ProdutoCadastro" component={ProdutoCadastro} admin />
+      <Route isPrivate path="/SuporteTreinamento" component={SuporteTreinamento} />
+      <Route isPrivate path="/SuporteManutencao" component={SuporteManutencao} />
+      <Route isPrivate path="/PerfilFuncionario" component={PerfilFuncionario} admin />
+      <Route isPrivate path="/PerfilCliente" component={PerfilCliente} />
       <Route exact path="/Sucesso" component={Sucesso} />
       <Route exact path="/Fracasso" component={Fracasso} />
       <Route exact path="/Orcamento" component={Orcamento} />

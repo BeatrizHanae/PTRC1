@@ -34,15 +34,15 @@ const Menu = () => {
                <Link to="/Contato">Contato</Link>
               </li>
               <li>
-                <Link to="/cadastro">Cadastro</Link>
+                <Link to="/Cadastro">Cadastro</Link>
               </li>
               <li>
-                <a href="#">
+                <a href="/Orcamento">
                   <img src={cartImage} alt="Cart" />
                 </a>
               </li>
               <li>
-                <Link to="/login" className="login">
+                <Link to="/Login" className="login">
                   Login
                 </Link>
               </li>
