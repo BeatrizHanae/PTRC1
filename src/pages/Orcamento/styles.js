@@ -34,14 +34,9 @@ align-content: center;
 padding: 2em;
 gap: 10px;
 
-input{
+label {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-self: center;
-  width: 100%;
-  height: 80px;
-  margin: 5px;
 }
 
 a{

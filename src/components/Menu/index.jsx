@@ -57,9 +57,7 @@ const Menu = () => {
                <Link to="/Contato">Contato</Link>
             </li>
             <li>
-                <Link to="/Carrinho" >
-                  Orçamento
-                </Link>
+                <Link to="/Orcamento" >Orçamento</Link>
             </li>
             <li>
                 <Link to="/SuporteManutencao">

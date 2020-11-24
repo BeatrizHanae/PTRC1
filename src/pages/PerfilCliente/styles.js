@@ -44,3 +44,9 @@ justify-content:space-between;
 gap:50px;
 
 `
+export const ButtonLink = styled.div`
+margin-left: 275px;
+a{
+  color: black;
+}
+`

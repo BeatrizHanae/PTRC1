@@ -88,3 +88,15 @@ export const suporteTreinamento = async newTreinamento => {
     console.log('Suporte de treinamento cadastrado.');
   });
 }
+
+export const orcamento = async newOrcamento => {
+  return api 
+  .post('/apiOrcamento/orcamento',{
+    PRODUTOS: newOrcamento.PRODUTOS,
+    PAGAMENTOS: newOrcamento.PAGAMENTOS,
+    CONTATO: newOrcamento.CONTATO,
+  })
+  .then(_response => {
+    console.log('Suporte de treinamento cadastrado.');
+  });
+}

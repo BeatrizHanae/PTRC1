@@ -4,8 +4,8 @@ import Button from '../../components/Button';
 import IconTreinamento from '../../assets/IconTreinamento.png';
 import orcamento1 from '../../assets/orcamento1.png';
 import IconManutencao from '../../assets/IconManutencao.png';
-import { DivAgrupa, DivBotao, DivTexto, DivTextos } from './styles';
-
+import { ButtonLink, DivBotao, DivTexto } from './styles';
+import { Link } from 'react-router-dom';
 
 const PerfilFuncionario = () =>{
  return(
@@ -21,15 +21,21 @@ const PerfilFuncionario = () =>{
         <DivBotao>
           <Button>
             <img src={orcamento1} alt= "orçamento" />
-            Orçamento
+            <ButtonLink>
+              <Link  to="/Orcamento">Orçamento</Link>
+            </ButtonLink>
           </Button>
           <Button>
-            <img src={IconManutencao} alt=" manutenção" />
-            Manutenção
+          <img src={IconManutencao} alt=" manutenção" />
+            <ButtonLink>
+              <Link  to="/SuporteManutencao">Manutenção</Link>
+            </ButtonLink>
           </Button>
           <Button>
            <img src= {IconTreinamento} alt="Treinamento" />
-           Treinamento 
+           <ButtonLink>
+              <Link  to="/SuporteTreinamento">Treinamento</Link>
+            </ButtonLink> 
           </Button>     
         </DivBotao>
    </Container>
