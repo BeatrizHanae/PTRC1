@@ -18,9 +18,9 @@ const Orcamento = () => {
   const submitToApi = useCallback(async data => {
       try {
         await orcamento(data);
-        history.push('/sucesso');
+        history.push('/Sucesso');
       } catch (err) {
-        history.push('/fracasso');
+        history.push('/Fracasso');
       }
     },
     [history],
