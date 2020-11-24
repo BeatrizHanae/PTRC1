@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useCallback } from 'react';
+import {useHistory} from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Container, DivFormCad, DivImgCad, DivTitulo } from './styles';
@@ -17,8 +18,14 @@ const schema = Yup.object({
 });
 
 const Cadastro = () => {
+  const history = useHistory();
   const submitToApi = useCallback(async data => {
-    await cadastro(data);
+    try{
+      await cadastro(data);
+      history.push('/Sucesso');
+    } catch{
+      history.push('/Fracasso');
+    }
   }, []);
   return (
     <Container>
