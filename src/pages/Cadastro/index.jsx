@@ -85,13 +85,15 @@ const Cadastro = () => {
               <label>
                 CPF/CNPJ:
                 {errors.CPF && touched.CPF && <span>{errors.CPF}</span>}
+                
                 <input
-                  type="text"
+                  type="number" min="0" step="1"
                   name="CPF"
                   onChange={handleChange}
                   value={values.CPF}
                   onBlur={handleBlur}
                   touched={touched.CPF}
+                 
                 />
               </label>
 

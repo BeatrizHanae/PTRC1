@@ -132,7 +132,7 @@ const Contato = () => {
                     <span>{errors.TELEFONE}</span>
                   )}
                   <input
-                    type="text"
+                    type="number" min="0" step="1"
                     name="TELEFONE"
                     onChange={handleChange}
                     values={values.TELEFONE}
