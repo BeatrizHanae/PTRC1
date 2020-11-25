@@ -64,7 +64,9 @@ const Suporte = () => {
           </p>
           <ul>
             <li> Peça o manual em contato@nihon.com</li>
+            <a href="/Contato">
             <li>Ou clique aqui!</li>
+            </a>
           </ul>
 
           <img src={IconTreinamento} alt="Icone de treinamento" />
