@@ -24,7 +24,7 @@ const Routes = () => {
       <Route onlyPublic exact path="/Login" component={Login} />
       <Route onlyPublic exact path="/Cadastro" component={Cadastro} />
       <Route exact path="/Contato" component={Contato} />
-      <Route exact path="/Suporte" component={Suporte} />
+      <Route exact path="/Servicos" component={Suporte} />
       <Route exact path="/Produtos" component={Produtos} />
       <Route isPrivate path="/ProdutoCadastro" component={ProdutoCadastro} admin />
       <Route isPrivate path="/SuporteTreinamento" component={SuporteTreinamento} />

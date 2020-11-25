@@ -28,7 +28,7 @@ const Menu = () => {
           {!data && (
             <>
               <li>
-              <Link to="/Suporte">Suporte</Link>
+              <Link to="/Servicos">Serviços</Link>
               </li>
               <li>
                <Link to="/Contato">Contato</Link>
@@ -51,7 +51,7 @@ const Menu = () => {
           {data && data.token &&!data.ADMIN &&(
             <>
             <li>
-              <Link to="/Suporte">Suporte</Link>
+              <Link to="/Servicos">Serviços</Link>
             </li>
             <li>
                <Link to="/Contato">Contato</Link>
